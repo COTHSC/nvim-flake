@@ -5,7 +5,7 @@ with pkgs.vimPlugins; [
   toggleterm-nvim # better terminal management
   (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) # better code coloring
   playground # treesitter playground
-nvim-treesitter-textobjects # jump around and select based on syntax (class, function, etc.)
+  nvim-treesitter-textobjects # jump around and select based on syntax (class, function, etc.)
   nvim-treesitter-context # keep current block header (func defn or whatever) on first line
   nvim-cmp # generic autocompleter
   cmp-nvim-lsp # use lsp as source for completions

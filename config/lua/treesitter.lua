@@ -13,7 +13,8 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { "javascript" },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+  vim.opt.runtimepath:append("/Users/jcts/.config/parsers/")
+  parser_install_dir = "/Users/jcts/.config/parsers/", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
   highlight = {
     enable = true,
