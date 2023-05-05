@@ -1,3 +1,4 @@
+vim.opt.runtimepath:append("/Users/jcts/.config/parsers/")
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "kotlin", "typescript", "javascript", "rust",   "lua", "vim", "vimdoc", "query" },
@@ -13,8 +14,7 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { "javascript" },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  vim.opt.runtimepath:append("/Users/jcts/.config/parsers/")
-  parser_install_dir = "/Users/jcts/.config/parsers/", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+  parser_install_dir = "/Users/jcts/.config/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
   highlight = {
     enable = true,
