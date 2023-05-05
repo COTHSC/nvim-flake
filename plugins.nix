@@ -1,9 +1,8 @@
 #plugins.nix
-{pkgs}:
+{pkgs, ...}:
 with pkgs.vimPlugins; [
   telescope-nvim
   toggleterm-nvim # better terminal management
-  nvim-treesitter.withAllGrammars
   nvim-ts-rainbow # bracket highlighting
   nvim-treesitter-context
   playground # treesitter playground
@@ -24,4 +23,5 @@ with pkgs.vimPlugins; [
   lsp-zero-nvim
   undotree
   fugitive
+  nvim-treesitter.withAllGrammars
 ]
