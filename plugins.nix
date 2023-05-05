@@ -3,6 +3,7 @@
 with pkgs.vimPlugins; [
   telescope-nvim
   toggleterm-nvim # better terminal management
+  nvim-treesitter.withAllGrammars
   nvim-ts-rainbow # bracket highlighting
   nvim-treesitter-context
   playground # treesitter playground
