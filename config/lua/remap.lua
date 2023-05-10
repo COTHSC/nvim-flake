@@ -5,6 +5,7 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 
 vim.keymap.set("n", "<leader>gp", vim.cmd.ChatGPT)
+vim.keymap.set("n", "<leader>ge", vim.cmd.ChatGPTEditWithInstructions)
 
 vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>wincmd j<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>wincmd k<CR>', { noremap = true, silent = true })
