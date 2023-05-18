@@ -11,3 +11,11 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>wincmd j<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>wincmd k<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>wincmd l<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>wincmd h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>qf', ':q!<CR>', { noremap = true, silent = true })
+
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.number = true
+vim.opt.relativenumber = true

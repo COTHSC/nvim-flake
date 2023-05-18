@@ -11,7 +11,7 @@ require'nvim-treesitter.configs'.setup {
 
 	-- Automatically install missing parsers when entering buffer
 	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-	auto_install = false,
+	auto_install = true,
 
 	-- List of parsers to ignore installing (for "all")
 
@@ -31,5 +31,20 @@ require'nvim-treesitter.configs'.setup {
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
+     indent = {
+       enable = true,
+     },
+     autotag = {
+       enable = true,
+     },
+     context_commentstring = {
+       enable = true,
+     },
+     query_linter = {
+       enable = true,
+     },
+     matchup = {
+       enable = true,
+     },
 }
 
