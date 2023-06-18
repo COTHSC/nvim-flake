@@ -1,4 +1,3 @@
-#flake.nix
 {
   description = "jcts nvim";
   inputs = {
@@ -16,7 +15,7 @@
     neovim,
   }: let
     overlayFlakeInputs = prev: final: {
-      neovim = neovim.packages.aarch64-darwin.neovim;
+      neovim = neovim.packages."${final.system}".neovim;
     };
 
     overlayMyNeovim = prev: final: {
@@ -25,16 +24,21 @@
       };
     };
 
-    pkgs = import nixpkgs {
-      system = "aarch64-darwin";
+    mkPkgs = system: import nixpkgs {
+      system = system;
       overlays = [overlayFlakeInputs overlayMyNeovim];
     };
+
+    systems = ["aarch64-darwin" "x86_64-linux"];
   in {
-    packages.aarch64-darwin.default =
-     pkgs.myNeovim;
-    apps.aarch64-darwin.default = {
-      type = "app";
-      program = "${pkgs.myNeovim}/bin/nvim";
-    };
+    packages = builtins.mapAttrs (system: _: {
+      default = (mkPkgs system).myNeovim;
+    }) (builtins.listToAttrs (map (system: { name = system; value = {}; }) systems));
+    apps = builtins.mapAttrs (system: _: {
+      default = {
+        type = "app";
+        program = "${(mkPkgs system).myNeovim}/bin/nvim";
+      };
+    }) (builtins.listToAttrs (map (system: { name = system; value = {}; }) systems));
   };
 }
