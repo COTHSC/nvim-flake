@@ -4,6 +4,7 @@ with pkgs.vimPlugins; [
   nvim-treesitter.withAllGrammars
   telescope-nvim
   toggleterm-nvim # better terminal management
+  nvim-lspconfig
   nvim-ts-rainbow # bracket highlighting
   nvim-treesitter-context
   playground # treesitter playground
