@@ -25,8 +25,6 @@ with pkgs.vimPlugins; [
   lsp-zero-nvim
   undotree
   fugitive
-  #dependencies for gpt
-  plenary-nvim
-  nui-nvim
-  ChatGPT-nvim
+  mason-nvim
+  mason-lspconfig-nvim
 ]
