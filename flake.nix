@@ -4,10 +4,6 @@
     nixpkgs = {
       url = "github:NixOs/nixpkgs";
     };
-    neovim = {
-      url = "github:neovim/neovim/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = {
     self,
@@ -26,7 +22,7 @@
 
     mkPkgs = system: import nixpkgs {
       system = system;
-      overlays = [overlayFlakeInputs overlayMyNeovim];
+      overlays = [overlayMyNeovim];
     };
 
     systems = ["aarch64-darwin" "x86_64-linux" "aarch64-linux"];
