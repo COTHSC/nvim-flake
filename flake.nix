@@ -5,7 +5,7 @@
       url = "github:NixOs/nixpkgs";
     };
     neovim = {
-      url = "github:neovim/neovim/stable?dir=contrib";
+      url = "github:neovim/neovim/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
