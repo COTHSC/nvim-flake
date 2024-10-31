@@ -1,21 +1,13 @@
 {
   description = "jcts nvim";
+  
   inputs = {
-    nixpkgs = {
-      url = "github:NixOs/nixpkgs";
-    };
+    nixpkgs.url = "github:NixOs/nixpkgs";
   };
-  outputs = {
-    self,
-    nixpkgs,
-    neovim,
-  }: let
-    overlayFlakeInputs = prev: final: {
-      neovim = neovim.packages."${final.system}".neovim;
-    };
 
+  outputs = { self, nixpkgs }: let
     overlayMyNeovim = prev: final: {
-        myNeovim = import ./packages/myNeovim.nix {
+      myNeovim = import ./packages/myNeovim.nix {
         pkgs = final;
       };
     };
@@ -30,6 +22,7 @@
     packages = builtins.mapAttrs (system: _: {
       default = (mkPkgs system).myNeovim;
     }) (builtins.listToAttrs (map (system: { name = system; value = {}; }) systems));
+
     apps = builtins.mapAttrs (system: _: {
       default = {
         type = "app";

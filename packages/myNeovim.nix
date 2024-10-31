@@ -1,11 +1,11 @@
-# packages/myNeovim.nix
-{pkgs}: let
+{ pkgs }:
+let
   customRC = import ../config/default.nix { inherit pkgs; };
-  plugins = import ../plugins.nix {inherit pkgs;};
+  plugins = import ../plugins.nix { inherit pkgs; };
 in
-  pkgs.wrapNeovim pkgs.neovim {
-    configure = {
-      inherit customRC;
-      packages.all.start = plugins;
-    };
-  }
+pkgs.neovim.override {
+  configure = {
+    inherit customRC;
+    packages.all.start = plugins;
+  };
+}
