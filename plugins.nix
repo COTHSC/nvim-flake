@@ -22,6 +22,7 @@ with pkgs.vimPlugins; [
   nvim-autopairs # balances parens as you type
   nvim-ts-autotag # balance or rename html
   rose-pine
+  gruvbox
   lsp-zero-nvim
   undotree
   fugitive
