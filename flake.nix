@@ -29,5 +29,16 @@
         program = "${(mkPkgs system).myNeovim}/bin/nvim";
       };
     }) (builtins.listToAttrs (map (system: { name = system; value = {}; }) systems));
+
+    homeManagerModules.default = { pkgs, ... }: {
+      home.packages = [ 
+      (import nixpkgs {
+        system = pkgs.system;
+        overlays = [overlayMyNeovim];
+      }).myNeovim
+  ];
+};
   };
+
+
 }
