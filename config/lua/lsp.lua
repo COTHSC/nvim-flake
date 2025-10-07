@@ -7,12 +7,6 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 
-local signs = {
-  Error = "❌",
-  Warn = "⚠️ ",
-  Hint = "💡",
-  Info = "ℹ️ "
-}
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -23,3 +17,15 @@ require('mason-lspconfig').setup({
         lsp_zero.default_setup,
     },
 })
+
+local signs = {
+  Error = "❌",
+  Warn = "⚠️ ",
+  Hint = "💡",
+  Info = "ℹ️ "
+}
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
