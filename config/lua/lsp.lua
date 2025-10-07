@@ -6,6 +6,14 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
+
+local signs = {
+  Error = "❌",
+  Warn = "⚠️ ",
+  Hint = "💡",
+  Info = "ℹ️ "
+}
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here 
