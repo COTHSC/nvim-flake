@@ -8,7 +8,4 @@ in
             inherit customRC;
             packages.all.start = plugins;
         };
-        extraPackages = with pkgs; [
-            ripgrep
-        ];
     }
