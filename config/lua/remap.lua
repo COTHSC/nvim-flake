@@ -13,6 +13,9 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>wincmd l<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>wincmd h<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>qf', ':q!<CR>', { noremap = true, silent = true })
 
+-- Add keybinding to toggle cheat sheet
+
+
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.tabstop = 4

@@ -30,15 +30,14 @@
       };
     }) (builtins.listToAttrs (map (system: { name = system; value = {}; }) systems));
 
-    homeManagerModules.default = { pkgs, ... }: {
-      home.packages = [ 
-      (import nixpkgs {
-        system = pkgs.system;
-        overlays = [overlayMyNeovim];
-      }).myNeovim
-  ];
-};
+    homeManagerModules = {
+      default = { pkgs, lib, config, ... }: {
+        programs.neovim = {
+          enable = true;
+          extraConfig = import ./config/default.nix { inherit pkgs; };
+          plugins = import ./plugins.nix { inherit pkgs; };
+        };
+      };
+    };
   };
-
-
 }

@@ -7,7 +7,6 @@ with pkgs.vimPlugins; [
   nvim-lspconfig
   rainbow-delimiters-nvim
   nvim-treesitter-context
-  playground # treesitter playground
   nvim-treesitter-textobjects # jump around and select based on syntax (class, function, etc.)
   nvim-treesitter-context # keep current block header (func defn or whatever) on first line
   nvim-cmp # generic autocompleter
@@ -28,4 +27,7 @@ with pkgs.vimPlugins; [
   fugitive
   mason-nvim
   mason-lspconfig-nvim
+  which-key-nvim
+  mini-icons
+    nvim-web-devicons
 ]
